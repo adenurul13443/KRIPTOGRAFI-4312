@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1ol-JJLPz-JCWTtnmnfluhCl1PgJ3-wqN
 """
 
-pip install pycipher
+# pip install pycipher
 import streamlit as st
 
 st.title("KRIPTOGRAFI")
