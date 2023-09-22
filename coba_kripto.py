@@ -8,7 +8,9 @@ Original file is located at
 """
 
 pip install pycipher
+import streamlit as st
 
+st.title("KRIPTOGRAFI")
 from pycipher import Vigenere
 a = Vigenere ('POLKE').encipher('DIANNUSWANTORO')
 print(a)
