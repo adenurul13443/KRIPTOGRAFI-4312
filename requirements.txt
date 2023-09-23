@@ -1,2 +1,2 @@
-pycipher==0.5.2
+pyciphers==0.5.2
 streamlit==1.23.0
