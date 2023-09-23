@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1qFDpLfAKd-czZcelifyxrfnwq-dV_ieI
 """
 
-pip install pycipher
+# pip install pycipher
 
 from pycipher import Vigenere
 from pycipher import Beaufort
