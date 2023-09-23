@@ -9,8 +9,10 @@ Original file is located at
 
 # pip install pycipher
 
+import streamlit as st
 from pycipher import Vigenere
 from pycipher import Beaufort
+st.title("KRIPTOGRAFI")
 plain_text=input("Enter the message: ")
 key=input("Enter the key: ")
 vigenere_cipher = Vigenere (key).encipher(plain_text)
