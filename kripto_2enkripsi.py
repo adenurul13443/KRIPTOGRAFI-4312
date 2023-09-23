@@ -13,16 +13,16 @@ import streamlit as st
 from pycipher import Vigenere
 from pycipher import Beaufort
 st.title("KRIPTOGRAFI")
-plain_text=input("Enter the message: ")
-key=input("Enter the key: ")
+plain_text=st.text_input("Enter the message: ")
+key=st.text_input("Enter the key: ")
 vigenere_cipher = Vigenere (key).encipher(plain_text)
 beaufort_cipher = Beaufort (key).encipher(vigenere_cipher)
 d = Beaufort (key).decipher(beaufort_cipher)
 e = Vigenere (key).decipher(d)
 
 print("---BEAUFORT CIPHER---")
-print("CIPHER TEXT : ",beaufort_cipher)
-print("PLAIN TEXT : ",e)
+st.write("CIPHER TEXT : ",beaufort_cipher)
+st.write("PLAIN TEXT : ",e)
 
 # print("---VIGENERE CIPHER---")
 # print("CIPHER TEXT : ",vigenere_cipher)
