@@ -17,10 +17,10 @@ plain_text=st.text_input("Enter the message: ")
 key=st.text_input("Enter the key: ")
 vigenere_cipher = Vigenere (key).encipher(plain_text)
 st.write("CIPHER TEXT VIGENERE CIPHER : ",vigenere_cipher)
-key2=st.text_input("Enter the key: ")
-beaufort_cipher = Beaufort (key2).encipher(vigenere_cipher)
+a=st.text_input("Enter the key: ")
+beaufort_cipher = Beaufort (a).encipher(vigenere_cipher)
 st.write("CIPHER TEXT BEAUFORT CIPHER : ",beaufort_cipher)
-d = Beaufort (key2).decipher(beaufort_cipher)
+d = Beaufort (a).decipher(beaufort_cipher)
 
 # e = Vigenere (key).decipher(d)
 
