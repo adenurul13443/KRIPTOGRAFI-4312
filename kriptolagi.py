@@ -14,8 +14,8 @@ from pycipher import Vigenere
 from pycipher import Beaufort
 st.title("KRIPTOGRAFI")
 plain_text=st.text_input("Enter the message: ")
-key=st.text_input("Enter the key: ")
-vigenere_cipher = Vigenere (key).encipher(plain_text)
+kunci=st.text_input("Enter the key: ")
+vigenere_cipher = Vigenere (kunci).encipher(plain_text)
 st.write("CIPHER TEXT VIGENERE CIPHER : ",vigenere_cipher)
 a=st.text_input("Enter the key: ")
 beaufort_cipher = Beaufort (a).encipher(vigenere_cipher)
