@@ -13,7 +13,7 @@ import streamlit as st
 from pycipher import Vigenere
 from pycipher import Beaufort
 st.title("KRIPTOGRAFI")
-st.text("Enkripsi 2x dengan Vigenere Cipher lalu Beaufort Cipher")
+st.title("Enkripsi 2x dengan Vigenere Cipher lalu Beaufort Cipher")
 plain_text=st.text_input("Enter the message: ")
 key=st.text_input("Enter the key: ")
 vigenere_cipher = Vigenere (key).encipher(plain_text)
