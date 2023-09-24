@@ -13,7 +13,6 @@ import streamlit as st
 from pycipher import Vigenere
 from pycipher import Beaufort
 st.title("KRIPTOGRAFI")
-st.title("Enkripsi 2x dengan Vigenere Cipher lalu Beaufort Cipher")
 plain_text=st.text_input("Enter the message: ")
 key=st.text_input("Enter the key: ")
 vigenere_cipher = Vigenere (key).encipher(plain_text)
@@ -22,13 +21,10 @@ d = Beaufort (key).decipher(beaufort_cipher)
 e = Vigenere (key).decipher(d)
 
 print("---HASIL ENKRIPSI---")
-st.button("Enkripsi", type="primary")
-if st.button('Enkripsi'):
-    st.write("CIPHER TEXT VIGENERE CIPHER : ",vigenere_cipher)
-    st.write("CIPHER TEXT BEAUFORT CIPHER : ",beaufort_cipher)
-    st.write("PLAIN TEXT : ",e)
-else:
-    st.write('Lakukan Enkripsi')
+st.write("CIPHER TEXT VIGENERE CIPHER : ",vigenere_cipher)
+st.write("CIPHER TEXT BEAUFORT CIPHER : ",beaufort_cipher)
+st.write("PLAIN TEXT : ",e)
+
 
 
 # print("---VIGENERE CIPHER---")
