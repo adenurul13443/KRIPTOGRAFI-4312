@@ -61,23 +61,34 @@ def calculate_avalanche_effect(original_text, key):
     avalanche_effect = (total_changes / (len(original_text) * 256)) * 100  # Hitung dalam persentase
     return avalanche_effect
 
-# Contoh penggunaan
-original_text = st.text_input("Enter the message: ")  # Teks asli
-key = st.text_input("Enter the Key: ")  # Kunci Vigenere
-cipher_text = vigenere_encrypt(original_text, key)  # Enkripsi teks asli
-decrypted_text = vigenere_decrypt(cipher_text, key)  # Dekripsi teks terenkripsi
+
+with st.form("my_form"):
+   st.write("Inside the form")
+   slider_val = st.slider("Form slider")
+   checkbox_val = st.checkbox("Form checkbox")
+   # Contoh penggunaan
+   original_text = st.text_input("Enter the message: ")  # Teks asli
+   key = st.text_input("Enter the Key: ")  # Kunci Vigenere
+   cipher_text = vigenere_encrypt(original_text, key)  # Enkripsi teks asli
+   decrypted_text = vigenere_decrypt(cipher_text, key)  # Dekripsi teks terenkripsi
 
 
-ber = calculate_ber(original_text, decrypted_text)
-cer = calculate_cer(original_text, decrypted_text)
-avalanche_effect = calculate_avalanche_effect(original_text, key)
+   ber = calculate_ber(original_text, decrypted_text)
+   cer = calculate_cer(original_text, decrypted_text)
+   avalanche_effect = calculate_avalanche_effect(original_text, key)
 
-if st.button('Enkripsi/Dekripsi', type="primary"):
-    st.write(f'Teks Asli: {original_text}')
-    st.write(f'Teks Terenkripsi: {cipher_text}')
-    st.write(f'Teks Terdekripsi: {decrypted_text}')
-    st.write(f"Bit Error Rate (BER): {ber:.4f}")
-    st.write(f"Character Error Rate (CER): {cer:.4f}")
-    st.write(f'Avalanche Effect: {avalanche_effect:.2f}%')
-else :
-     st.write('Lakukan Enkripsi dan Dekripsi')
+   # Every form must have a submit button.
+   submitted = st.form_submit_button("Enkripsi/Dekripsi")
+   if submitted:
+       st.write(f'Teks Asli: {original_text}')
+       st.write(f'Teks Terenkripsi: {cipher_text}')
+       st.write(f'Teks Terdekripsi: {decrypted_text}')
+       st.write(f"Bit Error Rate (BER): {ber:.4f}")
+       st.write(f"Character Error Rate (CER): {cer:.4f}")
+       st.write(f'Avalanche Effect: {avalanche_effect:.2f}%')
+
+
+# if st.button('Enkripsi/Dekripsi', type="primary"):
+   
+# else :
+#      st.write('Lakukan Enkripsi dan Dekripsi')
