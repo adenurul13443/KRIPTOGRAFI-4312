@@ -62,30 +62,28 @@ def calculate_avalanche_effect(original_text, key):
     return avalanche_effect
 
 
-with st.form("my_form"):
-   # Contoh penggunaan
-   original_text = st.text_input("Enter the message: ")  # Teks asli
-   key = st.text_input("Enter the Key: ")  # Kunci Vigenere
-   cipher_text = vigenere_encrypt(original_text, key)  # Enkripsi teks asli
-   decrypted_text = vigenere_decrypt(cipher_text, key)  # Dekripsi teks terenkripsi
+
+# Contoh penggunaan
+original_text = st.text_input("Enter the message: ")  # Teks asli
+key = st.text_input("Enter the Key: ")  # Kunci Vigenere
+cipher_text = vigenere_encrypt(original_text, key)  # Enkripsi teks asli
+decrypted_text = vigenere_decrypt(cipher_text, key)  # Dekripsi teks terenkripsi
 
 
-   ber = calculate_ber(original_text, decrypted_text)
-   cer = calculate_cer(original_text, decrypted_text)
-   avalanche_effect = calculate_avalanche_effect(original_text, key)
+ber = calculate_ber(original_text, decrypted_text)
+cer = calculate_cer(original_text, decrypted_text)
+avalanche_effect = calculate_avalanche_effect(original_text, key)
 
-   # Every form must have a submit button.
-   submitted = st.form_submit_button("Enkripsi/Dekripsi")
-   if submitted:
-       st.write(f'Teks Asli: {original_text}')
-       st.write(f'Teks Terenkripsi: {cipher_text}')
-       st.write(f'Teks Terdekripsi: {decrypted_text}')
-       st.write(f"Bit Error Rate (BER): {ber:.4f}")
-       st.write(f"Character Error Rate (CER): {cer:.4f}")
-       st.write(f'Avalanche Effect: {avalanche_effect:.2f}%')
+if st.button('Say hello'):
+    st.write('Why hello there')
+    st.write(f'Teks Asli: {original_text}')
+    st.write(f'Teks Terenkripsi: {cipher_text}')
+    st.write(f'Teks Terdekripsi: {decrypted_text}')
+    st.write(f"Bit Error Rate (BER): {ber:.4f}")
+    st.write(f"Character Error Rate (CER): {cer:.4f}")
+    st.write(f'Avalanche Effect: {avalanche_effect:.2f}%')
 
+else:
+    st.write('Goodbye')
+       
 
-# if st.button('Enkripsi/Dekripsi', type="primary"):
-   
-# else :
-#      st.write('Lakukan Enkripsi dan Dekripsi')
