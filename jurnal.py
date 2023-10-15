@@ -63,9 +63,6 @@ def calculate_avalanche_effect(original_text, key):
 
 
 with st.form("my_form"):
-   st.write("Inside the form")
-   slider_val = st.slider("Form slider")
-   checkbox_val = st.checkbox("Form checkbox")
    # Contoh penggunaan
    original_text = st.text_input("Enter the message: ")  # Teks asli
    key = st.text_input("Enter the Key: ")  # Kunci Vigenere
