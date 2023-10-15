@@ -22,14 +22,14 @@ d = Beaufort (key).decipher(beaufort_cipher)
 e = Vigenere (key).decipher(d)
 
 print("---HASIL ENKRIPSI---")
-# st.button("Enkripsi", type="primary")
-# if st.button('Enkripsi', type="primary"):
-#     st.write("CIPHER TEXT VIGENERE CIPHER : ",vigenere_cipher)
-#     st.write("CIPHER TEXT BEAUFORT CIPHER : ",beaufort_cipher)
-#     st.write("PLAIN TEXT : ",e)
-# else:
-#     st.write('Lakukan Enkripsi')
+st.button("Enkripsi", type="primary")
+if st.button('Enkripsi', type="primary"):
+    st.write("CIPHER TEXT VIGENERE CIPHER : ",vigenere_cipher)
+    st.write("CIPHER TEXT BEAUFORT CIPHER : ",beaufort_cipher)
+    st.write("PLAIN TEXT : ",e)
+else:
+    st.write('Lakukan Enkripsi')
 
 
-# print("---VIGENERE CIPHER---")
-# print("CIPHER TEXT : ",vigenere_cipher)
+print("---VIGENERE CIPHER---")
+print("CIPHER TEXT : ",vigenere_cipher)
