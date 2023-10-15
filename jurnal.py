@@ -74,8 +74,7 @@ ber = calculate_ber(original_text, decrypted_text)
 cer = calculate_cer(original_text, decrypted_text)
 avalanche_effect = calculate_avalanche_effect(original_text, key)
 
-if st.button('Say hello'):
-    st.write('Why hello there')
+if st.button('Enkripsi/Dekripsi', type="primary"):
     st.write(f'Teks Asli: {original_text}')
     st.write(f'Teks Terenkripsi: {cipher_text}')
     st.write(f'Teks Terdekripsi: {decrypted_text}')
@@ -84,6 +83,6 @@ if st.button('Say hello'):
     st.write(f'Avalanche Effect: {avalanche_effect:.2f}%')
 
 else:
-    st.write('Goodbye')
+    st.write('Lakukan Enkripsi dan Dekripsi')
        
 
