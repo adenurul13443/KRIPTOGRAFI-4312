@@ -8,6 +8,7 @@ Original file is located at
 """
 
 import streamlit as st
+st.title("KRIPTOGRAFI")
 def vigenere_encrypt(plain_text, key):
     encrypted_text = ""
     key_length = len(key)
@@ -61,8 +62,8 @@ def calculate_avalanche_effect(original_text, key):
     return avalanche_effect
 
 # Contoh penggunaan
-original_text = "universitasdiannuswantoro_2022_jalanimambondjolno20semarangdekattugumuda"  # Teks asli
-key = "semangatperjuangandengandiannuswantoro2023"  # Kunci Vigenere
+original_text = st.text_input("Enter the message: ")  # Teks asli
+key = st.text_input("Enter the Key: ")  # Kunci Vigenere
 cipher_text = vigenere_encrypt(original_text, key)  # Enkripsi teks asli
 decrypted_text = vigenere_decrypt(cipher_text, key)  # Dekripsi teks terenkripsi
 
