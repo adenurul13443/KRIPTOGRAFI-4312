@@ -81,7 +81,7 @@ if st.button('Enkripsi/Dekripsi', type="primary"):
     # st.write(f"Bit Error Rate (BER): {ber}")
     # st.write(f"Character Error Rate (CER): {cer}")
     # st.write(f'Avalanche Effect: {avalanche_effect}%')
-    st.write(f"Bit Error Rate (BER): {ber:.4f}")
+    st.write(f"Bit Error Rate (BER): {str(ber):.4f}")
     st.write(f"Character Error Rate (CER): {cer:.4f}")
     st.write(f'Avalanche Effect: {avalanche_effect:.2f}%')
 
