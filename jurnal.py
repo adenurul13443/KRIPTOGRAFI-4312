@@ -30,6 +30,7 @@ def vigenere_decrypt(cipher_text, key):
     return decrypted_text
 
 def calculate_ber(original_text, decrypted_text):
+    original_text != 0;
     if len(original_text) != len(decrypted_text):
         raise ValueError("Panjang teks asli dan teks terdekripsi harus sama")
 
