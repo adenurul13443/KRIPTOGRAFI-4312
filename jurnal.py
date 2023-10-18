@@ -9,11 +9,11 @@ Original file is located at
 
 import streamlit as st
 st.title("KRIPTOGRAFI")
-def vigenere_encrypt(plain_text, key):
+def vigenere_encrypt(original_text, key):
     encrypted_text = ""
     key_length = len(key)
-    for i in range(len(plain_text)):
-        char = plain_text[i]
+    for i in range(len(original_text)):
+        char = original_text[i]
         key_char = key[i % key_length]
         encrypted_char = chr((ord(char) + ord(key_char)) % 256)
         encrypted_text += encrypted_char
