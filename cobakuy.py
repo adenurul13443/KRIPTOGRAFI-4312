@@ -65,8 +65,8 @@ def calculate_cer(original_text, decrypted_text):
 #     # avalanche_effect = (differences/total_changes) * 100
 #     return avalanche_effect
 
-def calculate_avalanche_effect(original, modified):
-    diff = int(original, 16) ^ int(modified, 16)
+def calculate_avalanche_effect(original_text, modified):
+    diff = int(original_text, 16) ^ int(modified, 16)
     return bin(diff).count("1")
 
     st.markdown("<h5 style='color:cyan'>Avalanche Effect</h5>", unsafe_allow_html=True)
