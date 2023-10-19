@@ -65,7 +65,7 @@ def calculate_cer(original_text, decrypted_text):
 #     # avalanche_effect = (differences/total_changes) * 100
 #     return avalanche_effect
 
-def calculate_avalanche_effect(original_text, modified):
+def calculate_avalanche_effect(original, modified):
     diff = int(original, 16) ^ int(modified, 16)
     return bin(diff).count("1")
 
