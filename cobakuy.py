@@ -58,7 +58,7 @@ def calculate_avalanche_effect(original_text, key):
             differences = sum(1 for k in range(len(encrypted_text)) if encrypted_text[k] != modified_encrypted_text[k])
             total_changes += differences
 
-    avalanche_effect = (total_changes / (len(original_text) * 256)) * 100  # Hitung dalam persentase
+    avalanche_effect = (total_changes / (len(original_text)) * 100  # Hitung dalam persentase
     return avalanche_effect
 
 # Contoh penggunaan
