@@ -47,23 +47,33 @@ def calculate_cer(original_text, decrypted_text):
     cer = num_errors / len(original_text)
     return cer
 
-def calculate_avalanche_effect(original_text, key):
-    encrypted_text = vigenere_encrypt(original_text, key)
-    total_changes = 0
+# def calculate_avalanche_effect(original_text, key):
+#     encrypted_text = vigenere_encrypt(original_text, key)
+#     total_changes = 0
 
-    for i in range(len(original_text)):
-        modified_text = list(original_text)
-        for j in range(256):  # Coba semua kemungkinan perubahan
-            modified_text[i] = chr(j)
-            modified_encrypted_text = vigenere_encrypt(''.join(modified_text), key)
+#     for i in range(len(original_text)):
+#         modified_text = list(original_text)
+#         for j in range(256):  # Coba semua kemungkinan perubahan
+#             modified_text[i] = chr(j)
+#             modified_encrypted_text = vigenere_encrypt(''.join(modified_text), key)
 
-            differences = sum(1 for k in range(len(encrypted_text)) if encrypted_text[k] != modified_encrypted_text[k])
-            total_changes += differences
-            # total_changes = len(original_text)
+#             differences = sum(1 for k in range(len(encrypted_text)) if encrypted_text[k] != modified_encrypted_text[k])
+#             total_changes += differences
+#             # total_changes = len(original_text)
 
-    avalanche_effect = (total_changes / len(original_text)) * 100  # Hitung dalam persentase
-    # avalanche_effect = (differences/total_changes) * 100
-    return avalanche_effect
+#     avalanche_effect = (total_changes / len(original_text)) * 100  # Hitung dalam persentase
+#     # avalanche_effect = (differences/total_changes) * 100
+#     return avalanche_effect
+
+def calculate_avalanche_effect(original_text, modified):
+    diff = int(original, 16) ^ int(modified, 16)
+    return bin(diff).count("1")
+
+    st.markdown("<h5 style='color:cyan'>Avalanche Effect</h5>", unsafe_allow_html=True)
+    avalanche_effect_percentage = avalanche_effect(cipher_text, cipher_text_sec)
+    st.warning(f"Avalanche Effect : {avalanche_effect_percentage / plain_text_length * 100:.2f}%")
+
+    # st.markdown("<h3 style='color:white'>Before Avalanche Effect</h3>", unsafe_allow_html=True)
 
 # Contoh penggunaan
 original_text = st.text_input('Enter the message: ')  # Teks asli
