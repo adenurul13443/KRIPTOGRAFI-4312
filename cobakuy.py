@@ -8,13 +8,15 @@ Original file is located at
 """
 
 import streamlit as st
+import random
 def vigenere_encrypt(plain_text, key):
     encrypted_text = ""
     key_length = len(key)
     for i in range(len(plain_text)):
         char = chr((ord(plain_text[i]) + 1) % 256)
         key_char = key[i % key_length]
-        encrypted_char = chr((ord(char) + ord(key_char)) % 256)
+        # encrypted_char = chr((ord(char) + ord(key_char)) % 256)
+        encrypted_char = chr((ord(char) + ord(key_char) + random.randint(0, 255)) % 256)
         encrypted_text += encrypted_char
     return encrypted_text
 
@@ -56,9 +58,11 @@ def calculate_avalanche_effect(original_text, key):
             modified_encrypted_text = vigenere_encrypt(''.join(modified_text), key)
 
             differences = sum(1 for k in range(len(encrypted_text)) if encrypted_text[k] != modified_encrypted_text[k])
-            total_changes += differences
+            # total_changes += differences
+            total_changes = len(original_text)
 
-    avalanche_effect = (total_changes / len(original_text)) * 100  # Hitung dalam persentase
+    # avalanche_effect = (total_changes / len(original_text)) * 100  # Hitung dalam persentase
+    avalanche_effect = (differences/total_changes) * 100
     return avalanche_effect
 
 # Contoh penggunaan
