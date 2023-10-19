@@ -11,6 +11,7 @@ import streamlit as st
 import collections
 import math
 import random
+st.title("KRIPTOGRAFI")
 def vigenere_encrypt(plain_text, key):
     encrypted_text = ""
     key_length = len(key)
