@@ -72,7 +72,7 @@ ber = calculate_ber(original_text, decrypted_text)
 cer = calculate_cer(original_text, decrypted_text)
 avalanche_effect = calculate_avalanche_effect(original_text, key)
 
-st.write(f'Teks Asli: {original_text}')
+# st.write(f'Teks Asli: {original_text}')
 st.write(f'Teks Terenkripsi: {cipher_text}')
 st.write(f'Teks Terdekripsi: {decrypted_text}')
 st.write(f"Bit Error Rate (BER): {ber:.0f}")
