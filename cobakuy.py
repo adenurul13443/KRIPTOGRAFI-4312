@@ -11,7 +11,7 @@ import streamlit as st
 import collections
 import math
 import random
-st.title("KRIPTOGRAFI TEKS ASCII BERBASIS ALGORITMA SUBTITUSI\nVIGENERE CHIPER\n")
+st.title("KRIPTOGRAFI TEKS ASCII BERBASIS ALGORITMA SUBTITUSI VIGENERE CHIPER")
 
 def vigenere_encrypt(plain_text, key):
     encrypted_text = ""
